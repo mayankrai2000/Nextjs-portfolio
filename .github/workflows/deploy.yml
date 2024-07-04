@@ -31,7 +31,7 @@ jobs:
      with:
       flags: "-avc --exclude=.git --exclude=.gitignore --exclude=.github --update"
       src: "./"
-      dest: '"${{secrets.USERNAME}}"@"${{secrets.HOST}}":/home/porfolio'
+      dest: '"${{secrets.USERNAME}}"@"${{secrets.HOST}}":/home/portfolio'
 
    - name: Install dependencies and build on VPS
      uses: appleboy/ssh-action@v1.0.3
