@@ -1,5 +1,4 @@
 const header = {
- // all the properties are optional - can be left empty or deleted
  homepage: "https://porfolio.simbl.dev",
  title: "JS.",
 };
@@ -24,8 +23,8 @@ const projects = [
   description:
    "Interactive tool designed to help uncover personal values and understand how they influence work performance and satisfaction",
   stack: ["Next.js", "TypeScript", "Socket.io", "React"],
-  sourceCode: "https://github.com",
-  livePreview: "https://movingmotivators.simbl.dev",
+  sourceCode: "https://github.com/SimonPail/moving-motivators",
+  livePreview: "https://movingmotivators.extia.ro",
  },
  {
   name: "Sarba",

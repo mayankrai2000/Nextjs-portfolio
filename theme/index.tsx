@@ -68,7 +68,6 @@ export default function CustomThemeProvider({ children }: PropsWithChildren) {
 
  const toggleColorMode = () => {
   const newMode = mode === "light" ? "dark" : "light";
-  console.log({ newMode });
   setMode(newMode);
   localStorage.theme = newMode;
  };
