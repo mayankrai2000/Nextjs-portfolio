@@ -18,29 +18,29 @@ const about = {
 
 const projects = [
  {
+  name: "Boschung",
+  year: "2024",
+  description:
+   "High-performance monitoring and management platform for road and airport maintenance, providing real-time data visualization and analytics to enhance operational efficiency.",
+  stack: ["React", "Redux-Saga", "TypeScript"],
+  liveUrl: "https://www.boschung.com/fr/product/bvision/",
+ },
+ {
   name: "Moving Motivators",
   year: "2024",
   description:
    "Interactive tool designed to help uncover personal values and understand how they influence work performance and satisfaction",
   stack: ["Next.js", "TypeScript", "Socket.io", "React"],
   sourceCode: "https://github.com/SimonPail/moving-motivators",
-  livePreview: "https://movingmotivators.extia.ro",
+  liveUrl: "https://movingmotivators.extia.ro",
  },
  {
   name: "Sarba",
-  year: "2023",
+  year: "2024",
   description:
    "Expense Management Application designed to help employees and administration to manage expenses incurred during working days",
   stack: ["Next.js", "NestJS", "TypeScript", "React"],
-  livePreview: "https://github.com",
- },
- {
-  name: "Centre Harmonia",
-  year: "2021",
-  description:
-   "Website with administrative and event scheduling functionalities for a wildlife center",
-  stack: ["VueJs", "JavaScript", "Laravel"],
-  livePreview: "https://www.harmonia-comportementaliste.com/accueil",
+  projectUrl: "/project/sarba",
  },
 ];
 

@@ -2,8 +2,11 @@ import CustomLink from "./ui/CustomLink";
 import { about } from "@/portfolio";
 
 const Footer = () => (
- <footer className="mt-20">
-  <CustomLink className="font-bold" href={about.social.github} target="_blank">
+ <footer className="mt-24">
+  <CustomLink
+   className="font-bold text-xs"
+   href={about.social.github}
+   target="_blank">
    Created By Simon
   </CustomLink>
  </footer>

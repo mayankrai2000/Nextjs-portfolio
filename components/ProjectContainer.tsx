@@ -1,6 +1,7 @@
 import uniqid from "uniqid";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { projects } from "../portfolio";
 import CustomLink from "./ui/CustomLink";
 import Chip from "@mui/material/Chip";
@@ -16,7 +17,7 @@ const ProjectContainer = ({ project }: { project: (typeof projects)[0] }) => (
     <span className="font-display"> - {project.year}</span>
    </div>
 
-   <p className="mt-1">{project.description}</p>
+   <p className="mt-1 leading-relaxed">{project.description}</p>
    {project.stack && (
     <ul className="flex flex-wrap my-2 gap-2">
      {project.stack.map((item) => (
@@ -38,13 +39,23 @@ const ProjectContainer = ({ project }: { project: (typeof projects)[0] }) => (
      </CustomLink>
     )}
 
-    {project.livePreview && (
+    {project.liveUrl && (
      <CustomLink
-      href={project.livePreview}
+      href={project.liveUrl}
       aria-label="live preview"
       variant="icon"
       target="_blank">
       <LaunchIcon />
+     </CustomLink>
+    )}
+
+    {project.projectUrl && (
+     <CustomLink
+      href={project.projectUrl}
+      aria-label="project preview"
+      variant="icon"
+      target="_blank">
+      <VisibilityIcon />
      </CustomLink>
     )}
    </CardActions>

@@ -17,6 +17,9 @@ const config: Config = {
     display: "var(--display-font)",
     body: "var(--body-font)",
    },
+   colors: {
+    sarba: "#E9967A",
+   },
   },
  },
  plugins: [],

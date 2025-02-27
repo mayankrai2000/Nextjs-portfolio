@@ -57,20 +57,28 @@ export default function CustomThemeProvider({ children }: PropsWithChildren) {
  const [mode, setMode] = useState<ModeOptions>("light");
 
  useEffect(() => {
-  const isDarkMode = window?.matchMedia("(prefers-color-scheme: dark)").matches;
+  // Check localStorage first
+  const savedTheme = localStorage.getItem("theme") as ModeOptions;
 
-  if (isDarkMode) {
-   toggleColorMode();
+  if (savedTheme) {
+   setMode(savedTheme);
+  } else {
+   // Check system preference if no saved theme
+   const isDarkMode = window?.matchMedia(
+    "(prefers-color-scheme: dark)"
+   ).matches;
+   setMode(isDarkMode ? "dark" : "light");
   }
  }, []);
 
- const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-
  const toggleColorMode = () => {
+  if (!mode) return; // Guard against null
   const newMode = mode === "light" ? "dark" : "light";
   setMode(newMode);
-  localStorage.theme = newMode;
+  localStorage.setItem("theme", newMode);
  };
+
+ const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
  return (
   <ColorModeContext.Provider value={{ toggleColorMode }}>

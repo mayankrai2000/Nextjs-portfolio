@@ -7,8 +7,8 @@ const Skills = () => {
  if (!skills.length) return null;
 
  return (
-  <CustomSection title="Skills" id="skills">
-   <ul className="w-[95%] max-w-[450px] mx-auto flex justify-center items-start flex-wrap space-x-2">
+  <CustomSection title="Skills" id="skills" className="py-5">
+   <ul className="w-[95%] max-w-[450px] mx-auto flex justify-center items-start flex-wrap space-x-2 ">
     {skills.map((skill) => (
      <div key={uniqid()} className="mb-2">
       <Chip color="primary" variant="filled" size="medium" label={skill}></Chip>

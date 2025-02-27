@@ -2,16 +2,14 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import ScrollToTop from "@/components/ScrollToTop";
 import Skills from "@/components/Skills";
+import MotionPath from "@/components/WavyLine";
 
 export default function Home() {
  return (
   <>
-   <Header />
-
    <main className="flex min-h-screen flex-col items-center justify-between px-10 py-16 md:p-24 font-body">
     <About />
     <Projects />
@@ -20,7 +18,8 @@ export default function Home() {
     <Contact />
     <Footer />
    </main>
-
+   <MotionPath shape={0} className="top-[420px] md:top-[200px]" />
+   <MotionPath shape={2} className="bottom-16" />
    <ScrollToTop />
   </>
  );

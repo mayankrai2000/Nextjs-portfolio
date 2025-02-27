@@ -9,11 +9,13 @@ import React, { useRef } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { motion } from "framer-motion";
+import { useTheme } from "@mui/material";
 
 const Experience = () => {
+ const theme = useTheme();
  const scrollRef = useRef(null);
  return (
-  <CustomSection title="Experience" id="experience">
+  <CustomSection title="Experience" id="experience" className="py-5">
    <div
     ref={scrollRef}
     className="max-w-[850px] mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
@@ -25,7 +27,11 @@ const Experience = () => {
       viewport={{ root: scrollRef, once: true, amount: 0.8 }}
       className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
       <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[#e5e7eb] bg-transparent group-[.is-active]:bg-[var(--primary-color)] text-[var(--foreground)] group-[.is-active]:text-[var(--foreground)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-       <Icon className="w-[60%]" />
+       <Icon
+        className={`w-[60%] ${
+         theme.palette.mode === "dark" ? "text-black" : "text-white"
+        }`}
+       />
       </div>
 
       <Card
@@ -40,7 +46,7 @@ const Experience = () => {
          </div>
         </div>
 
-        <div className="">{item.description}</div>
+        <div className="leading-relaxed">{item.description}</div>
 
         {item.stack && (
          <ul className="flex flex-wrap mt-2 gap-2">
