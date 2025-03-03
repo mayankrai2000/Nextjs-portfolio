@@ -49,9 +49,7 @@ export default function Page() {
 
  // Create parallax transformation values
  const imageYTransform1 = useParallax(smoothProgress1, -80);
- const contentYTransform1 = useParallax(smoothProgress1, 50);
  const imageYTransform2 = useParallax(smoothProgress2, -80);
- const contentYTransform2 = useParallax(smoothProgress2, 50);
 
  return (
   <div>
@@ -79,7 +77,7 @@ export default function Page() {
 
    <section
     ref={featuresSection1Ref}
-    className="container flex flex-col md:flex-row gap-32 md:gap-20 items-center justify-center overflow-hidden pb-[100px] md:pb-0 z-50">
+    className="container flex flex-col md:flex-row gap-28 sm:gap-0 items-center justify-center overflow-hidden pb-[40px] md:pb-0 z-50">
     <motion.div
      className="relative mx-auto px-4"
      style={{ y: imageYTransform1 }}>
@@ -96,9 +94,7 @@ export default function Page() {
      </div>
     </motion.div>
 
-    <motion.div
-     className="mx-auto px-4 flex flex-col justify-center items-center md:w-1/3"
-     style={{ y: contentYTransform1 }}>
+    <div className="mx-auto px-4 flex flex-col justify-center items-center md:w-1/3 min-w-[250px]">
      <h2 className="mb-10 text-2xl font-bold text-sarba">USER FEATURES</h2>
      <ul className="space-y-6 text-base">
       <li className="flex items-center gap-4">
@@ -122,14 +118,12 @@ export default function Page() {
        <span>Sign monthly reports and review previous ones.</span>
       </li>
      </ul>
-    </motion.div>
+    </div>
    </section>
    <section
     ref={featuresSection2Ref}
     className="container flex flex-col md:flex-row gap-10 items-center justify-center overflow-hidden py-[50px] md:py-0">
-    <motion.div
-     className="mx-auto px-4 flex flex-col justify-center items-center md:w-1/2"
-     style={{ y: contentYTransform2 }}>
+    <div className="mx-auto px-4 flex flex-col justify-center items-center md:w-1/2 min-w-[250px]">
      <h2 className="mb-10 text-2xl font-bold text-sarba">ADMIN FEATURES</h2>
      <ul className="space-y-4 text-base">
       <li className="flex items-center gap-4">
@@ -157,7 +151,7 @@ export default function Page() {
        <span>Multi-currency expense support.</span>
       </li>
      </ul>
-    </motion.div>
+    </div>
     <motion.div
      className="relative mx-auto px-4"
      style={{ y: imageYTransform2 }}>
