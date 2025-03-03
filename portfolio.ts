@@ -67,24 +67,35 @@ const skills = [
 const experience = [
  {
   name: "Full-stack React/Javascript Developer",
-  date: "2023 - present",
-  location: "Romania",
+  locations: [
+   { date: "2024 - 2025", location: "Portugal" },
+   { date: "2023 - 2024", location: "Romania" },
+  ],
+
   description:
-   "Extia is a consulting agency based in Bucharest where I contributed to various projects.",
+   "Extia is an international consulting agency specializing in IT, where I contributed to various projects.",
   stack: ["Next.js", "React", "Redux", "TypeScript", "NestJS", "MongoDB"],
  },
  {
   name: "Full-stack VueJS/Javascript Developer",
-  date: "2022 - 2023",
-  location: "France",
+  locations: [
+   {
+    date: "2022 - 2023",
+    location: "France",
+   },
+  ],
   description:
    "ITAF Technologie is developing an healthcare application serving a user base of 70000 active patients.",
   stack: ["VueJS", "JavaScript", "Node.Js", "Express.JS", "MongoDB"],
  },
  {
   name: "Full-stack VueJS/PHP Developer",
-  date: "2019 - 2022",
-  location: "France",
+  locations: [
+   {
+    date: "2019 - 2022",
+    location: "France",
+   },
+  ],
   description: "Addeo is developing a Career Development SaaS Application.",
   stack: ["VueJS", "JavaScript", "PHP", "MySQL"],
  },

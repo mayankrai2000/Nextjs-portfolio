@@ -41,8 +41,12 @@ const Experience = () => {
        <CardContent>
         <div className="flex justify-between items-baseline flex-wrap">
          <h3 className="font-display text-2xl">{item.name}</h3>
-         <div className="font-display">
-          <time>{item.date}</time> / {item.location}
+         <div>
+          {item.locations.map((loc, index) => (
+           <div className="font-display" key={index}>
+            <time>{loc.date}</time> / {loc.location}
+           </div>
+          ))}
          </div>
         </div>
 
