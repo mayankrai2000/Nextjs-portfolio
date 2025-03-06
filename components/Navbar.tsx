@@ -23,7 +23,7 @@ const Navbar = () => {
  const toggleNavList = () => setShowNavList(!showNavList);
 
  return (
-  <nav className="flex items-center justify-between space-x-4">
+  <nav className="flex items-center justify-between space-x-4 z-40">
    {isHomePage && (
     <ul
      className={`none md:flex ${
@@ -83,7 +83,7 @@ const Navbar = () => {
     <button
      type="button"
      onClick={toggleNavList}
-     className="z-20 md:hidden bg-transparent"
+     className="z-50 md:hidden bg-transparent"
      aria-label="toggle navigation">
      {showNavList ? <CloseIcon /> : <MenuIcon />}
     </button>

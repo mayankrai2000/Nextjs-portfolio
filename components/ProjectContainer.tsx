@@ -53,8 +53,7 @@ const ProjectContainer = ({ project }: { project: (typeof projects)[0] }) => (
      <CustomLink
       href={project.projectUrl}
       aria-label="project preview"
-      variant="icon"
-      target="_blank">
+      variant="icon">
       <VisibilityIcon />
      </CustomLink>
     )}
