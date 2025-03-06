@@ -8,8 +8,7 @@ const about = {
  role: "React / Full-stack developer",
  description:
   "Full-stack web developer working with React, Next.js, VueJs, NestJS",
- resume:
-  "https://www.icloud.com/iclouddrive/00fJTz3G-5FFZcZAvwcFjI93A#shared%5Fresume",
+ resume: "/resume_en.pdf",
  social: {
   linkedin: "https://www.linkedin.com/in/simon-paillassa/",
   github: "https://github.com/SimonPail",
