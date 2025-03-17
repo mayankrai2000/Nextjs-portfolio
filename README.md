@@ -2,7 +2,7 @@
 
 A sleek and customizable **Next.js portfolio** to showcase my projects, skills, and experience. Built with **React, Next.js, and Tailwind CSS** for a fast and responsive design.  
 
-🚀 **Live Preview:** [myportfolio.com]([https://myportfolio.com](https://portfolio.simbl.dev/))
+🚀 **Live Preview:** [https://portfolio.simbl.dev](https://portfolio.simbl.dev/)
 
 ## 🛠 Installation & Setup
 
