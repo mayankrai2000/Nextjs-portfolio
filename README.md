@@ -1,15 +1,28 @@
-My Next.js Portfolio
+# My Next.js Portfolio
 
-## Getting Started
+A sleek and customizable **Next.js portfolio** to showcase my projects, skills, and experience. Built with **React, Next.js, and Tailwind CSS** for a fast and responsive design.  
 
-First, run the development server:
+🚀 **Live Preview:** [myportfolio.com]([https://myportfolio.com](https://portfolio.simbl.dev/))
 
-```bash
+## 🛠 Installation & Setup
+
+
+### 1️⃣ Clone the repository  
+```sh
+git clone https://github.com/SimonPail/nextjs-portfolio.git
+cd nextjs-portfolio
+```
+
+### 2️⃣ Install dependencies
+```sh
+npm install
+# or
+yarn install
+```
+
+### 3️⃣ Run the development server
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
