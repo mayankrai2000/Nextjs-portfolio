@@ -1,5 +1,4 @@
 import BackArrow from "@/components/BackArrow";
-import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function ProjectLayout({

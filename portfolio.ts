@@ -39,7 +39,7 @@ const projects = [
   description:
    "Expense Management Application designed to help employees and administration to manage expenses incurred during working days",
   stack: ["Next.js", "NestJS", "TypeScript", "React"],
-  projectUrl: "/project/sarba",
+  projectUrl: "/projects/sarba",
  },
 ];
 

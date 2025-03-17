@@ -4,7 +4,6 @@ import { about } from "@/portfolio";
 import Button from "@mui/material/Button";
 import CustomLink from "./ui/CustomLink";
 import ScrollFadeInWrapper from "./ui/ScrollFadeInWrapper";
-import MotionPath from "./WavyLine";
 
 const About = () => {
  const { name, role, description, resume, social } = about;
