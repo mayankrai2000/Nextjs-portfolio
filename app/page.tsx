@@ -18,8 +18,8 @@ export default function Home() {
     <Contact />
     <Footer />
    </main>
-   <MotionPath shape={0} className="top-[480px] md:top-[200px]" />
-   <MotionPath shape={2} className="bottom-16" />
+   <MotionPath shape={0} className="top-[450px] md:top-[200px]" />
+   <MotionPath shape={2} className="bottom-12" />
    <ScrollToTop />
   </>
  );

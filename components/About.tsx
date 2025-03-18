@@ -9,7 +9,7 @@ const About = () => {
  const { name, role, description, resume, social } = about;
 
  return (
-  <ScrollFadeInWrapper className="flex flex-col justify-center items-center pt-10 pb-5">
+  <ScrollFadeInWrapper className="flex flex-col justify-center items-center md:pt-10 pb-5">
    {name && (
     <h1 className="text-6xl sm:text-7xl md:text-8xl font-display">
      Hi, I am <span className="opacity-75">{name}.</span>
