@@ -1,14 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import uniqid from "uniqid";
 import { projects } from "../portfolio";
 import ProjectContainer from "./ProjectContainer";
 import CustomSection from "./ui/CustomSection";
-import { useEffect, useState } from "react";
 
 const Projects = () => {
- if (!projects.length) return null;
-
  const [mounted, setMounted] = useState(false);
 
  useEffect(() => {
@@ -16,6 +14,8 @@ const Projects = () => {
  }, []);
 
  if (!mounted) return null;
+
+ if (!projects.length) return null;
 
  return (
   <CustomSection title="Projects" id="projects" className="py-5">
