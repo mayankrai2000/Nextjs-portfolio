@@ -49,7 +49,7 @@ export default function MotionPath({
     "absolute left-0 w-full h-[250px] z-0 overflow-hidden flex justify-center",
     className
    )}>
-   <div className="min-w-[800px] w-full h-full">
+   <div className="min-w-[1000px] w-full h-full">
     <svg
      viewBox={lineShapes[shape].viewBox}
      width="100%"
