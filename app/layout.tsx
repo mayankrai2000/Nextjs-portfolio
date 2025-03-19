@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import CustomThemeProvider from "@/theme";
+import { CustomThemeProvider } from "@/theme";
 import { Bebas_Neue, Public_Sans } from "next/font/google";
 import Header from "@/components/Header";
 
@@ -27,16 +26,17 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
  return (
-  <html lang="en" className={`${publicSans.variable} ${bebasNeue.variable}`}>
+  <html
+   lang="en"
+   className={`${publicSans.variable} ${bebasNeue.variable}`}
+   suppressHydrationWarning>
    <body>
-    <AppRouterCacheProvider>
-     <CustomThemeProvider>
-      <div className="bg-[var(--foreground)] text-[var(--text)] relative">
-       <Header />
-       {children}
-      </div>
-     </CustomThemeProvider>
-    </AppRouterCacheProvider>
+    <CustomThemeProvider>
+     <div className="bg-[var(--foreground)] text-[var(--text)] relative">
+      <Header />
+      {children}
+     </div>
+    </CustomThemeProvider>
    </body>
   </html>
  );

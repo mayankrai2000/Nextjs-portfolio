@@ -1,90 +1,89 @@
 "use client";
 
-import { Bebas_Neue } from "next/font/google";
 import {
- PropsWithChildren,
- createContext,
- useEffect,
- useMemo,
- useState,
-} from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+ ThemeProvider as MUIThemeProvider,
+ createTheme,
+} from "@mui/material/styles";
+import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Bebas_Neue } from "next/font/google";
+import { useMemo, PropsWithChildren, useEffect, useState } from "react";
 
-type ModeOptions = "light" | "dark";
-
-const roboto = Bebas_Neue({
+const bebas = Bebas_Neue({
  weight: ["400"],
  subsets: ["latin"],
  display: "swap",
 });
 
-const getDesignTokens = (mode: ModeOptions) => ({
+const getDesignTokens = (mode: "light" | "dark") => ({
  typography: {
-  fontSize: 16,
-  fontFamily: roboto.style.fontFamily,
+  fontFamily: bebas.style.fontFamily,
  },
  components: {
   MuiButton: {
    styleOverrides: {
-    root: { borderRadius: ".7rem" },
+    root: {
+     borderRadius: ".7rem",
+     fontFamily: bebas.style.fontFamily,
+     fontSize: "16px",
+    },
+   },
+  },
+  MuiChip: {
+   styleOverrides: {
+    label: {
+     fontFamily: `${bebas.style.fontFamily}`,
+     fontSize: "16px",
+    },
    },
   },
  },
+
  palette: {
   mode,
   ...(mode === "light"
    ? {
-      // palette values for light mode
       primary: { main: "#ffde59" },
-      // main: "#ffde59",
-      text: {
-       primary: "#000000",
-      },
+      text: { primary: "#000000" },
      }
    : {
       primary: { main: "#ffde59" },
-      // main: "#ffde59",
-      text: {
-       primary: "#ffffff",
-      },
+      text: { primary: "#ffffff" },
      }),
  },
 });
 
-export const ColorModeContext = createContext({ toggleColorMode: () => {} });
-
-export default function CustomThemeProvider({ children }: PropsWithChildren) {
- const [mode, setMode] = useState<ModeOptions>("light");
+export function ThemeWrapper({ children }: PropsWithChildren) {
+ const { theme, systemTheme, setTheme } = useTheme(); // Get current theme from next-themes
 
  useEffect(() => {
-  // Check localStorage first
-  const savedTheme = localStorage.getItem("theme") as ModeOptions;
+  const storedTheme = localStorage.getItem("theme");
 
-  if (savedTheme) {
-   setMode(savedTheme);
-  } else {
-   // Check system preference if no saved theme
-   const isDarkMode = window?.matchMedia(
-    "(prefers-color-scheme: dark)"
-   ).matches;
-   setMode(isDarkMode ? "dark" : "light");
+  if (!storedTheme) {
+   const defaultTheme = systemTheme || "light";
+   setTheme(defaultTheme);
+   localStorage.setItem("theme", defaultTheme);
   }
  }, []);
 
- const toggleColorMode = () => {
-  if (!mode) return; // Guard against null
-  const newMode = mode === "light" ? "dark" : "light";
-  setMode(newMode);
-  localStorage.setItem("theme", newMode);
- };
+ const resolvedTheme = theme === "system" ? systemTheme : theme;
+ const mode = resolvedTheme === "dark" ? "dark" : "light";
 
- const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+ // Create MUI theme dynamically
+ const muiTheme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
  return (
-  <ColorModeContext.Provider value={{ toggleColorMode }}>
-   <ThemeProvider theme={theme}>
-    <div className={theme.palette.mode}>{children}</div>
-   </ThemeProvider>
-  </ColorModeContext.Provider>
+  <MUIThemeProvider theme={muiTheme}>
+   <CssBaseline />
+   {children}
+  </MUIThemeProvider>
+ );
+}
+
+export function CustomThemeProvider({ children }: PropsWithChildren) {
+ return (
+  <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+   <ThemeWrapper>{children}</ThemeWrapper>
+  </NextThemesProvider>
  );
 }

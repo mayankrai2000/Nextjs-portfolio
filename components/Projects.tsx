@@ -1,10 +1,21 @@
+"use client";
+
 import uniqid from "uniqid";
 import { projects } from "../portfolio";
 import ProjectContainer from "./ProjectContainer";
 import CustomSection from "./ui/CustomSection";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
  if (!projects.length) return null;
+
+ const [mounted, setMounted] = useState(false);
+
+ useEffect(() => {
+  setMounted(true); // Wait until client is mounted to avoid SSR Hydration Issue with next-themes
+ }, []);
+
+ if (!mounted) return null;
 
  return (
   <CustomSection title="Projects" id="projects" className="py-5">

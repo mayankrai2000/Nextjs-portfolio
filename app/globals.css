@@ -16,9 +16,9 @@
  --primary-color: #ffde59;
 }
 
-.black {
- --text: #ffffff;
+.dark {
  --foreground: #000000;
+ --text: #ffffff;
  --primary-color: #ffde59;
 }
 

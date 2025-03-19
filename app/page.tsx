@@ -19,7 +19,7 @@ export default function Home() {
     <Footer />
    </main>
    <MotionPath shape={0} className="top-[450px] md:top-[200px]" />
-   <MotionPath shape={2} className="bottom-12" />
+   <MotionPath shape={2} className="bottom-16" />
    <ScrollToTop />
   </>
  );

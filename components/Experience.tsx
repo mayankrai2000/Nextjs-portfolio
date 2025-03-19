@@ -5,15 +5,24 @@ import { experience } from "../portfolio";
 import CustomSection from "./ui/CustomSection";
 import Chip from "@mui/material/Chip";
 import Icon from "@mui/icons-material/WorkOutlineOutlined";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { motion } from "framer-motion";
-import { useTheme } from "@mui/material";
+import { useTheme } from "next-themes";
 
 const Experience = () => {
- const theme = useTheme();
+ const { theme } = useTheme();
  const scrollRef = useRef(null);
+
+ const [mounted, setMounted] = useState(false);
+
+ useEffect(() => {
+  setMounted(true); // Wait until client is mounted to avoid SSR Hydration Issue with next-themes
+ }, []);
+
+ if (!mounted) return null;
+
  return (
   <CustomSection title="Experience" id="experience" className="py-5">
    <div
@@ -28,9 +37,7 @@ const Experience = () => {
       className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
       <div className="flex items-center justify-center w-10 h-10 rounded-full border border-[#e5e7eb] bg-transparent group-[.is-active]:bg-[var(--primary-color)] text-[var(--foreground)] group-[.is-active]:text-[var(--foreground)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
        <Icon
-        className={`w-[60%] ${
-         theme.palette.mode === "dark" ? "text-black" : "text-white"
-        }`}
+        className={`w-[60%] ${theme === "dark" ? "text-black" : "text-white"}`}
        />
       </div>
 

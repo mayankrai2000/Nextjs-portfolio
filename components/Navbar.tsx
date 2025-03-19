@@ -1,23 +1,19 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Brightness2Icon from "@mui/icons-material/Brightness2";
 import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { projects, skills, contact, experience } from "../portfolio";
 import CustomLink from "./ui/CustomLink";
-import { useTheme } from "@mui/material/styles";
-import { ColorModeContext } from "@/theme";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
- const theme = useTheme();
-
+ const { theme, setTheme } = useTheme();
  const pathname = usePathname();
  const isHomePage = pathname === "/";
-
- const { toggleColorMode } = useContext(ColorModeContext);
  const [showNavList, setShowNavList] = useState(false);
 
  const toggleNavList = () => setShowNavList(!showNavList);
@@ -28,7 +24,7 @@ const Navbar = () => {
     <ul
      className={`none md:flex ${
       showNavList ? "flex" : "hidden"
-     } fixed h-full w-full bg-white dark:bg-black justify-center items-center inset-0 md:static z-10 flex-col md:flex-row md:fle space-y-4 md:space-y-0`}>
+     } fixed h-full text-lg w-full bg-white dark:bg-black justify-center items-center inset-0 md:static z-10 flex-col md:flex-row md:fle space-y-4 md:space-y-0`}>
      {/* Projects */}
      {projects.length && (
       <li className="md:ml-6">
@@ -68,14 +64,14 @@ const Navbar = () => {
 
    <button
     type="button"
-    onClick={toggleColorMode}
+    onClick={() => {
+     const newTheme = theme === "dark" ? "light" : "dark";
+     setTheme(newTheme);
+     localStorage.setItem("theme", newTheme);
+    }}
     className="bg-transparent"
     aria-label="toggle theme">
-    {theme.palette.mode === "dark" ? (
-     <WbSunnyRoundedIcon />
-    ) : (
-     <Brightness2Icon />
-    )}
+    {theme === "dark" ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
    </button>
 
    {/* Hamburger Icon */}
