@@ -1,53 +1,55 @@
 const header = {
- homepage: "https://porfolio.simbl.dev",
- title: "JS.",
+ homepage: "https://mayankrai.netlify.app/",
+ title: "M.K.R.",
 };
 
 const about = {
- name: "Simon",
- role: "React / Full-stack developer",
+ name: "Mayank Kumar Rai",
+ role: "React / React Native / Full-stack developer",
  description:
-  "Specializing in React, Next.js, Vue.js, and NestJS, I build scalable and performant web applications with modern frameworks, focusing on user experience.",
+  "Specializing in React, React Native, Next.js, Vue.js, and NestJS, I build scalable and performant web applications with modern frameworks, focusing on user experience.",
  resume: "/resume_en.pdf",
  social: {
-  linkedin: "https://www.linkedin.com/in/simon-paillassa/",
-  github: "https://github.com/SimonPail",
+  linkedin: "https://www.linkedin.com/in/i-mayank-kumar-rai/",
+  github: "https://github.com/mayankrai2000",
  },
 };
 
 const projects = [
  {
-  name: "Boschung",
+  name: "Drone Rangers",
   year: "2024",
   description:
-   "High-performance monitoring and management platform for road and airport maintenance, providing real-time data visualization and analytics to enhance operational efficiency.",
-  stack: ["React", "Redux-Saga", "TypeScript"],
-  liveUrl: "https://www.boschung.com/fr/product/bvision/",
+   "Drone Rangers provides expert drone training and services, including aerial mapping, agriculture, and surveillance, with industry collaborations to promote innovation and education.",
+  stack: ["Next Js", "Redux-Saga", "TypeScript"],
+  projectUrl: "https://www.dronerangers.in/",
  },
  {
-  name: "Moving Motivators",
-  year: "2024",
+  name: "Ezydash",
+  year: "2024 - 2025",
   description:
-   "Interactive tool designed to help uncover personal values and understand how they influence work performance and satisfaction",
-  stack: ["Next.js", "TypeScript", "Socket.io", "React"],
-  sourceCode: "https://github.com/SimonPail/moving-motivators",
-  liveUrl: "https://movingmotivators.extia.ro",
+   "EzyDash is a comprehensive super application that offers a diverse range of features, including e-commerce for selling goods, hotel booking, event ticket sales, and a real-time chat community similar to WhatsApp.",
+  stack: ["React Native", "TypeScript", "Socket.io", "React","JavaScript"],
+  sourceCode: "Private",
+  liveUrl: "Comming Soon",
  },
  {
-  name: "Sarba",
+  name: "theclassydoor",
   year: "2024",
   description:
-   "Expense Management Application designed to help employees and administration to manage expenses incurred during working days",
-  stack: ["Next.js", "NestJS", "TypeScript", "React"],
-  projectUrl: "/projects/sarba",
+   "E-commerce Website. The Classy Door is an e-commerce platform that offers a wide range of home decor products, including furniture, lighting, and accessories, with a focus on quality and style.",
+  sourceCode: "Private",
+  stack: ["Next.js", "TypeScript", "React"],
+  projectUrl: "https://www.theclassydoor.com/",
  },
 ];
 
 const skills = [
+ "React",
+ "React Native",
  "HTML/CSS",
  "JavaScript",
  "TypeScript",
- "React",
  "Redux",
  "VueJs",
  "Next.js",
@@ -59,49 +61,37 @@ const skills = [
  "Git",
  "CI/CD",
  "Jest",
- "PactumJS",
  "Socket.io",
 ];
 
 const experience = [
- {
-  name: "Full-stack React/Javascript Developer",
-  locations: [
-   { date: "2024 - 2025", location: "Portugal" },
-   { date: "2023 - 2024", location: "Romania" },
-  ],
-
-  description:
-   "Extia is an international consulting agency specializing in IT, where I contributed to various projects.",
-  stack: ["Next.js", "React", "Redux", "TypeScript", "NestJS", "MongoDB"],
- },
- {
-  name: "Full-stack VueJS/Javascript Developer",
-  locations: [
-   {
-    date: "2022 - 2023",
-    location: "France",
-   },
-  ],
-  description:
-   "ITAF Technologie is developing an healthcare application serving a user base of 70000 active patients.",
-  stack: ["VueJS", "JavaScript", "Node.Js", "Express.JS", "MongoDB"],
- },
- {
-  name: "Full-stack VueJS/PHP Developer",
-  locations: [
-   {
-    date: "2019 - 2022",
-    location: "France",
-   },
-  ],
-  description: "Addeo is developing a Career Development SaaS Application.",
-  stack: ["VueJS", "JavaScript", "PHP", "MySQL"],
- },
+  {
+    name: "Full-stack React Native Developer",
+    company: "Softkingo Technologies Pvt. Ltd.",
+    locations: [
+      { date: "2024 - 2025", location: "Noida" },
+    ],
+    description:
+      "Worked on multiple cross-platform mobile and web applications using modern JavaScript technologies. Responsible for building scalable and maintainable features across the stack.",
+    stack: ["Next.js", "React", "Redux", "TypeScript", "NestJS", "Node.js", "MongoDB"],
+  },
+  {
+    name: "Full-stack Developer",
+    locations: [
+      {
+        date: "2023 - 2024",
+        location: "Remote (India)",
+      },
+    ],
+    description:
+      "Contributed to the development of a E-Commerce platform with over 70,000 active users. Focused on building responsive UIs and robust backend services.",
+    stack: ["React JS", "Next JS", "JavaScript", "Node.js", "Express.js", "MongoDB"],
+  },
 ];
 
+
 const contact = {
- email: "contact@simbl.dev",
+ email: "mayankkumarrai1@gamil.com",
 };
 
 export { header, about, projects, skills, experience, contact };

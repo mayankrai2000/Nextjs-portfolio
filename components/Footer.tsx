@@ -7,7 +7,7 @@ const Footer = () => (
    className="font-bold text-xs"
    href={about.social.github}
    target="_blank">
-   Created By Simon
+   Created By Mayank Kumar Rai
   </CustomLink>
  </footer>
 );

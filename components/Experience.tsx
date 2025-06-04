@@ -18,7 +18,7 @@ const Experience = () => {
  const [mounted, setMounted] = useState(false);
 
  useEffect(() => {
-  setMounted(true); // Wait until client is mounted to avoid SSR Hydration Issue with next-themes
+  setMounted(true); 
  }, []);
 
  if (!mounted) return null;

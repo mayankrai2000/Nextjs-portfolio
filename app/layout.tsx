@@ -16,7 +16,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
- title: "Simon | Portfolio",
+ title: "Mayank | Portfolio",
  description: "Welcome to my portfolio",
 };
 

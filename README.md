@@ -9,7 +9,7 @@ A sleek and customizable **Next.js portfolio** to showcase my projects, skills, 
 
 ### 1️⃣ Clone the repository  
 ```sh
-git clone https://github.com/SimonPail/nextjs-portfolio.git
+git clone https://github.com/mayankrai2000/nextjs-portfolio.git
 cd nextjs-portfolio
 ```
 
